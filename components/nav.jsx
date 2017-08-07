@@ -1,63 +1,32 @@
-import React from 'react';
-import Home from './home.jsx';
-import Setup from './Setup.jsx';
-import Examples from './Examples.jsx';
-import References from './References.jsx';
+import React, {Component} from 'react';
+import { Link } from 'react-router';
 
-
-class Nav extends React.Component {
-
-constructor() {
-      super();
-      this.state = {
-         pageActiveState: "Home"
-      }
-	
-   };
-setPage(pageActive){
-		this.setState({pageActiveState: pageActive})
-};
-   render() {
-      return (
-         <div className="container-fluid">
-		      <nav className="navbar navbar-default">
-		        <div className="container-fluid">
-		          <div className="navbar-header">
-		            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		              <span className="sr-only">Toggle navigation</span>
-		              <span className="icon-bar"></span>
-		              <span className="icon-bar"></span>
-		              <span className="icon-bar"></span>
-		            </button>
-		            <a className="navbar-brand" href="#">My First React App</a>
-		          </div>
-		          <div id="navbar" className="navbar-collapse collapse">
-		            <ul className="nav navbar-nav">
-		              <li><a href="#" onClick={this.setPage.bind(this,"Home")}>Home</a></li>
-		              <li><a href="#" onClick={this.setPage.bind(this,"Setup")}>Setup</a></li>
-		              <li><a href="#" onClick={this.setPage.bind(this,"Examples")}>Examples</a></li>
-		              <li><a href="#" onClick={this.setPage.bind(this,"References")}>References</a></li>
-		            </ul>
-		          </div>
-		        </div>
-		      </nav>
-			{(this.state.pageActiveState == "Home")
-			? <Home />
-			: (this.state.pageActiveState == "Setup")
-			? <Setup />
-			: (this.state.pageActiveState == "Examples")
-			? <Examples />
-			: (this.state.pageActiveState == "References")
-			? <References />
-			: ""
-			}
-         </div>
-      );
-   }
+class Nav extends Component {
+    render(){
+        return(
+            <div className="container-fluid">
+                <nav className="navbar navbar-default">
+                    <div className="container-fluid">
+                        <div className="navbar-header">
+                            <a className="navbar-brand" href="#">My First React App</a>
+                        </div>
+                        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul className="nav navbar-nav">
+                                {/* Change from a to Link */}
+                                <li><Link to="/" activeClassName="active">Home</Link></li>
+                                <li><Link to="/setup" activeClassName="active">Setup</Link></li>
+                                <li><Link to="/examples" activeClassName="active">Examples</Link></li>
+                                <li><Link to="/references" activeClassName="active">References</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                {this.props.children}
+            </div>
+        );
+    }
 }
 
 
 
 export default Nav;
-
-

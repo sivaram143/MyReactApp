@@ -1,0 +1,31 @@
+
+
+const routes = [
+        {
+            "route_name"              : "home",
+            "path"                   : "/",
+            "visible_in_menu"         : true,
+            "menu_title"              : "Home",
+            "menu_font_awesome_icon"  : "fa fa-home",
+            "component"              : "App",
+            "child_routes"            : null
+        },
+        {
+            "route_name"              : "analytics",
+            "path"                   : "/analytics",
+            "visible_in_menu"         : true,
+            "menu_title"              : "Analytics",
+            "menu_font_awesome_icon"  : "fa fa-bar-chart",
+            "component"              : "Dashboard",
+            "template"                : null,
+            "child_routes" : [
+                {
+                    "route_name"      : "analytics_daily" ,
+                    "path"           : "/daily",
+                    "visible_in_menu" : true,
+                    "menu_title"      : "Daily",
+                    "component"      : "Dashboard"
+                }
+            ]
+        }
+    ]

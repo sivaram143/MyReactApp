@@ -1,15 +1,12 @@
 import React from 'react';
+import LeftMenu from './LeftMenu.jsx';
 
 class Examples extends React.Component {
    render() {
+        
+      const cars = this.props.route.data;
       return (
-             <div className="jumbotron">
-		        <h1>Component Examples</h1>
-		        <p>Please Click on the below link to view the different components code written using JSX</p>
-		        <p>
-		          <a className="btn btn-sm btn-primary" href="../../components/#navbar" role="button">View Components code &raquo;</a>
-		        </p>
-		      </div>
+             <LeftMenu item={cars}/>
       )
    }
 }

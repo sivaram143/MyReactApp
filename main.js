@@ -8,6 +8,7 @@ import Setup from './components/Setup.jsx';
 import Examples from './components/Examples.jsx';
 import References from './components/References.jsx';
 import ButtonComponent from './components/Buttons.jsx';
+import RouterComponent from './components/RouterComponent.jsx';
 
 //import data from './json/LeftMenu.json';
 
@@ -80,15 +81,16 @@ const data =[
 ];
 
 render(
-    <Router history={browserHistory}>
-        <Route component={Nav}>
-            <Route path="/" component={Home}/>
-            <Route path="/setup" component={Setup}/>
-            <Route path="/examples" component={Examples}  data={data}>
-							 <Route path="/examples/:{data.url}" component={ButtonComponent}/>
-						</Route>
-            <Route path="/references" component={References}/>
-        </Route>
-    </Router>,
+		<Router history={browserHistory}>
+			 <Route component={Nav}>
+					 <Route path="/" component={Home}/>
+					 <Route path="/setup" component={Setup}/>
+					 <Route path="/examples" component={Examples}  data={data}>
+							<Route path="/examples/:{data.url}" component={ButtonComponent}/>
+					 </Route>
+					 <Route path="/references" component={References}/>
+					 <Route path="/react-router" component={RouterComponent}/>
+			 </Route>
+	 </Router>,
     document.getElementById('app')
 );

@@ -16,8 +16,9 @@ class Nav extends Component {
                                 <li><Link to="/" activeClassName="active">Home</Link></li>
                                 <li><Link to="/setup" activeClassName="active">Setup</Link></li>
                                 <li><Link to="/examples" activeClassName="active">Examples</Link></li>
+                                <li><Link to="/react-router" activeClassName="active">React Router</Link></li>
                                 <li><Link to="/references" activeClassName="active">References</Link></li>
-                            </ul>
+                                </ul>
                         </div>
                     </div>
                 </nav>

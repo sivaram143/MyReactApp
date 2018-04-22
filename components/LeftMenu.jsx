@@ -1,6 +1,9 @@
 import React from 'react';
 import LeftMenuJson from '../json/LeftMenu.json';
 import { Link } from 'react-router';
+import ButtonComponent from './Buttons';
+
+
 
 class LeftMenu extends React.Component {
 
@@ -43,7 +46,7 @@ class LeftMenu extends React.Component {
 			  </div>
 
 			<div className="col-sm-9">
-			    Main content goes here
+			   <ButtonComponent/>
 			</div>
 			</div>
 		);

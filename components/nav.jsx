@@ -17,6 +17,7 @@ class Nav extends Component {
                                 <li><Link to="/setup" activeClassName="active">Setup</Link></li>
                                 <li><Link to="/examples" activeClassName="active">Examples</Link></li>
                                 <li><Link to="/react-router" activeClassName="active">React Router</Link></li>
+                                <li><Link to="/react-json-form" activeClassName="active">React Json Form</Link></li>
                                 <li><Link to="/references" activeClassName="active">References</Link></li>
                                 </ul>
                         </div>

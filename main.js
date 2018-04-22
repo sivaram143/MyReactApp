@@ -7,9 +7,9 @@ import Home from './components/home.jsx';
 import Setup from './components/Setup.jsx';
 import Examples from './components/Examples.jsx';
 import References from './components/References.jsx';
-import ButtonComponent from './components/Buttons.jsx';
+import ButtonComponent from './components/Buttons';
 import RouterComponent from './components/RouterComponent.jsx';
-
+import ReactJsonfrom from './components/ReactJsonfrom.jsx';
 //import data from './json/LeftMenu.json';
 
 const data =[
@@ -90,6 +90,7 @@ render(
 					 </Route>
 					 <Route path="/references" component={References}/>
 					 <Route path="/react-router" component={RouterComponent}/>
+					 <Route path="/react-json-form" component={ReactJsonfrom}/>
 			 </Route>
 	 </Router>,
     document.getElementById('app')

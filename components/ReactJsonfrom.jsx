@@ -79,7 +79,22 @@ const uiSchema = {
       "telephone":{
           "classNames": "col-sm-6"
       }
-    }
+    },
+    "ui:buttons": [{
+                "type": "button",
+                "title": "Cancel"
+
+          },
+          {
+                "type": "button",
+                "title": "Save and continue"
+
+          },
+          {
+                "type": "submit",
+                "title": "Submit"
+          }
+    ]
 };
 
 /* Form Data */
@@ -174,18 +189,28 @@ export default class ReactJsonfrom extends Component {
   }
 
   render() {
+    let buttons = [];
+    uiSchema["ui:buttons"] && uiSchema["ui:buttons"].forEach( (button) => {
+          buttons.push(<button key={button.type} type={button.type}  className={button.type==='submit'?'btn btn-primary':'btn btn-default'}>{button.title}</button>);
+    });
+    console.log(buttons)
     return (
-    <Form schema={schema}
-        uiSchema={uiSchema}
-        onError={log("errors")}
-        validate={validate}
-        transformErrors={transformErrors}
-        showErrorList={false}
-        liveValidate={true}
-        FieldTemplate={CustomFieldTemplate}
-        ObjectFieldTemplate={ObjectFieldTemplate}
-        >
-      </Form>
+    <div>
+      <Form schema={schema}
+          uiSchema={uiSchema}
+          onError={log("errors")}
+          validate={validate}
+          transformErrors={transformErrors}
+          showErrorList={false}
+          liveValidate={true}
+          FieldTemplate={CustomFieldTemplate}
+          ObjectFieldTemplate={ObjectFieldTemplate}
+          >
+        </Form>
+      <div>
+            {buttons}
+      </div>
+      </div>
 
     );
   }
